@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 29, 2013 4:53:51 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping schema="dochadzka">
+ <class name="sk.tuke.seregely.dipl.att.entity.Zamestnanec" table="zamestnanec">
+  <id name="idZamestnanca" type="int">
+   <column name="id_zamestnanca"/>
+   <generator class="sequence" >
+              <param name="sequence">zamestnanec_id_seq</param>
+              </generator>
+  </id>
+  <many-to-one class="sk.tuke.seregely.dipl.att.entity.Oddelenie"
+   fetch="select" name="oddelenie">
+   <column name="id_oddelenia"/>
+  </many-to-one>
+  <property generated="never" lazy="false" name="celeMeno" type="string">
+   <column length="100" name="cele_meno"/>
+  </property>
+  <set fetch="select" inverse="true" lazy="true" name="dovolenkas"
+   sort="unsorted" table="dovolenka">
+   <key>
+    <column name="id_zamestnanca"/>
+   </key>
+   <one-to-many class="sk.tuke.seregely.dipl.att.entity.Dovolenka"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true"
+   name="praceneschopnosts" sort="unsorted" table="praceneschopnost">
+   <key>
+    <column name="id_zamestnanca"/>
+   </key>
+   <one-to-many class="sk.tuke.seregely.dipl.att.entity.Praceneschopnost"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true"
+   name="pritomnostVPracis" sort="unsorted" table="pritomnost_v_praci">
+   <key>
+    <column name="id_zamestnanca"/>
+   </key>
+   <one-to-many class="sk.tuke.seregely.dipl.att.entity.PritomnostVPraci"/>
+  </set>
+ </class>
+</hibernate-mapping>

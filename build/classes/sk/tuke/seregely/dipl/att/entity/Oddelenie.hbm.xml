@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 29, 2013 4:53:51 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping schema="dochadzka">
+    <class name="sk.tuke.seregely.dipl.att.entity.Oddelenie" table="oddelenie">
+        <id name="idOddelenia" type="int">
+            <column name="id_oddelenia" />
+            <generator class="sequence" >
+              <param name="sequence">oddelenie_id_seq</param>
+              </generator>
+        </id>
+        <property name="nazov" type="string">
+            <column name="nazov" length="50" />
+        </property>
+        <set name="zamestnanecs" table="zamestnanec" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_oddelenia" />
+            </key>
+            <one-to-many class="sk.tuke.seregely.dipl.att.entity.Zamestnanec" />
+        </set>
+        <set name="veduciOddelenias" table="veduci_oddelenia" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_oddelenia" />
+            </key>
+            <one-to-many class="sk.tuke.seregely.dipl.att.entity.VeduciOddelenia" />
+        </set>
+        <set name="personalistas" table="personalista" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_oddelenia" />
+            </key>
+            <one-to-many class="sk.tuke.seregely.dipl.att.entity.Personalista" />
+        </set>
+    </class>
+</hibernate-mapping>
