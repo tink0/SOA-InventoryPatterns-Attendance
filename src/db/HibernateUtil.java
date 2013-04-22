@@ -30,7 +30,10 @@ public class HibernateUtil {
    		 .addClass(Praceneschopnost.class)
    		 .addClass(PritomnostVPraci.class)
    		 .addClass(VeduciOddelenia.class)
-   		 .addClass(Zamestnanec.class);
+   		 .addClass(Zamestnanec.class)
+   		 .addClass(PnExport.class)
+   		 .addClass(PdExport.class)
+   		 .addClass(DovolenkaExport.class);
    		 
            
            SessionFactory sessFact = configuration.buildSessionFactory();
@@ -38,7 +41,6 @@ public class HibernateUtil {
             return sessFact;
         }
         catch (Throwable ex) {
-            // Make sure you log the exception, as it might be swallowed
             System.err.println("Initial SessionFactory creation failed." + ex);
             throw new ExceptionInInitializerError(ex);
         }

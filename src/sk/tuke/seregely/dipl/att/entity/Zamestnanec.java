@@ -13,6 +13,7 @@ public class Zamestnanec implements java.io.Serializable {
 	private int idZamestnanca;
 	private Oddelenie oddelenie;
 	private String celeMeno;
+	private String email;
 	private Set dovolenkas = new HashSet(0);
 	private Set praceneschopnosts = new HashSet(0);
 	private Set pritomnostVPracis = new HashSet(0);
@@ -80,6 +81,14 @@ public class Zamestnanec implements java.io.Serializable {
 
 	public void setPritomnostVPracis(Set pritomnostVPracis) {
 		this.pritomnostVPracis = pritomnostVPracis;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

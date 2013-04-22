@@ -10,13 +10,13 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-    <display-name>HelloWorld</display-name>
-    <servlet-name>HelloWorld</servlet-name>
-    <servlet-class>org.jboss.samples.webservices.HelloWorld</servlet-class>
+    <display-name>AttendanceExportService</display-name>
+    <servlet-name>AttendanceExportService</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.att.services.utilities.AttendanceExportService</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>HelloWorld</servlet-name>
-    <url-pattern>/HelloWorld</url-pattern>
+    <servlet-name>AttendanceExportService</servlet-name>
+    <url-pattern>/AttendanceExportService</url-pattern>
   </servlet-mapping>
   <servlet>
     <display-name>Oddelenie</display-name>
@@ -26,5 +26,65 @@
   <servlet-mapping>
     <servlet-name>Oddelenie</servlet-name>
     <url-pattern>/Oddelenie</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <display-name>Dovolenka</display-name>
+    <servlet-name>Dovolenka</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.att.services.entities.DovolenkaService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dovolenka</servlet-name>
+    <url-pattern>/Dovolenka</url-pattern>
+  </servlet-mapping> <servlet>
+    <display-name>CiselnikStavov</display-name>
+    <servlet-name>CiselnikStavov</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.att.services.entities.CiselnikStavovService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CiselnikStavov</servlet-name>
+    <url-pattern>/CiselnikStavov</url-pattern>
+  </servlet-mapping> <servlet>
+    <display-name>Personalista</display-name>
+    <servlet-name>Personalista</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.att.services.entities.PersonalistaService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Personalista</servlet-name>
+    <url-pattern>/Personalista</url-pattern>
+  </servlet-mapping> <servlet>
+    <display-name>Praceneschopnost</display-name>
+    <servlet-name>Praceneschopnost</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.att.services.entities.PraceneschopnostService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Praceneschopnost</servlet-name>
+    <url-pattern>/Praceneschopnost</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <display-name>PritomnostVPraci</display-name>
+    <servlet-name>PritomnostVPraci</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.att.services.entities.PritomnostVPraciService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PritomnostVPraci</servlet-name>
+    <url-pattern>/PritomnostVPraci</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>VeduciOddelenia</display-name>
+    <servlet-name>VeduciOddelenia</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.att.services.entities.VeduciOddeleniaService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VeduciOddelenia</servlet-name>
+    <url-pattern>/VeduciOddelenia</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>Zamestnanec</display-name>
+    <servlet-name>Zamestnanec</servlet-name>
+    <servlet-class>sk.tuke.seregely.dipl.att.services.entities.ZamestnanecService</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Zamestnanec</servlet-name>
+    <url-pattern>/Zamestnanec</url-pattern>
   </servlet-mapping>
 </web-app>

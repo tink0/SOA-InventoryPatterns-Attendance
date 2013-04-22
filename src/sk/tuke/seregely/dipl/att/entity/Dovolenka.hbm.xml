@@ -10,7 +10,7 @@
               <param name="sequence">dovolenka_id_seq</param>
               </generator>
         </id>
-        <many-to-one name="zamestnanec" class="sk.tuke.seregely.dipl.att.entity.Zamestnanec" fetch="select">
+        <many-to-one name="zamestnanec" class="sk.tuke.seregely.dipl.att.entity.Zamestnanec" lazy="false" fetch="select">
             <column name="id_zamestnanca" />
         </many-to-one>
         <property name="koniec" type="timestamp">

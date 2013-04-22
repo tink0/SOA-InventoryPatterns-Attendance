@@ -11,32 +11,15 @@
               </generator>
   </id>
   <many-to-one class="sk.tuke.seregely.dipl.att.entity.Oddelenie"
-   fetch="select" name="oddelenie">
+   fetch="select" lazy="false" name="oddelenie">
    <column name="id_oddelenia"/>
   </many-to-one>
   <property generated="never" lazy="false" name="celeMeno" type="string">
    <column length="100" name="cele_meno"/>
   </property>
-  <set fetch="select" inverse="true" lazy="true" name="dovolenkas"
-   sort="unsorted" table="dovolenka">
-   <key>
-    <column name="id_zamestnanca"/>
-   </key>
-   <one-to-many class="sk.tuke.seregely.dipl.att.entity.Dovolenka"/>
-  </set>
-  <set fetch="select" inverse="true" lazy="true"
-   name="praceneschopnosts" sort="unsorted" table="praceneschopnost">
-   <key>
-    <column name="id_zamestnanca"/>
-   </key>
-   <one-to-many class="sk.tuke.seregely.dipl.att.entity.Praceneschopnost"/>
-  </set>
-  <set fetch="select" inverse="true" lazy="true"
-   name="pritomnostVPracis" sort="unsorted" table="pritomnost_v_praci">
-   <key>
-    <column name="id_zamestnanca"/>
-   </key>
-   <one-to-many class="sk.tuke.seregely.dipl.att.entity.PritomnostVPraci"/>
-  </set>
+    <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+  
  </class>
 </hibernate-mapping>
